@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Join Now — Cruise Presentation</title>
+<style>
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;background:linear-gradient(180deg,#edf7fb 0%,#f8fbfd 55%,#fff 100%);color:#172033;line-height:1.5;padding:10px 8px 28px}
+.container{width:100%;max-width:650px;margin:auto}
+.card{background:#fff;border:1px solid rgba(15,52,96,.08);border-radius:20px;box-shadow:0 10px 34px rgba(15,52,96,.10);overflow:hidden;margin-bottom:15px}
+.start-card{padding:18px;text-align:center}
+.start-card h2{font-size:1.05rem;color:#0f3460;margin:0 0 4px}
+.start-card p{font-size:.84rem;color:#66717e;margin:0 0 13px}
+.start-btn{display:block;width:100%;border:0;border-radius:13px;padding:16px 13px;background:linear-gradient(100deg,#0f3460,#174f87,#0f3460);background-size:200% 100%;color:#fff;font-size:1rem;font-weight:800;letter-spacing:.15px;cursor:pointer;box-shadow:0 8px 22px rgba(15,52,96,.25);animation:buttonFlow 3s ease infinite}
+.start-btn:hover{transform:translateY(-1px)}
+@keyframes buttonFlow{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+
+.hero{position:relative;min-height:475px;color:#fff;overflow:hidden}
+.hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(2,24,46,.02) 5%,rgba(2,24,46,.08) 38%,rgba(2,24,46,.9) 100%)}
+.hero-content{position:relative;z-index:2;min-height:475px;padding:30px 23px 27px;display:flex;flex-direction:column;justify-content:flex-end}
+.kicker{font-size:.68rem;letter-spacing:2.2px;font-weight:800;color:#ffe28a;margin-bottom:7px}
+.hero h1{font-size:clamp(1.8rem,7vw,2.65rem);line-height:1.04;margin:0 0 10px;text-shadow:0 2px 13px rgba(0,0,0,.4)}
+.hero-sub{font-size:1rem;margin:0;max-width:570px}
+.hero-sub strong{color:#ffe28a}
+.hero-tag{margin-top:13px;display:inline-block;width:max-content;max-width:100%;padding:7px 11px;border-left:3px solid #ffd166;background:rgba(5,30,54,.65);font-size:.82rem;font-weight:650;border-radius:0 9px 9px 0}
+
+.welcome{padding:17px 20px;text-align:center;background:linear-gradient(135deg,#fff,#eef8fc)}
+.welcome h2{margin:0 0 5px;color:#0f3460;font-size:1.12rem}
+.welcome p{margin:0;color:#5d6673;font-size:.88rem}
+
+.bonus{position:relative;overflow:hidden;margin:13px 13px 0;padding:14px;border:2px solid #f2c94c;border-radius:16px;background:linear-gradient(110deg,#fff6cf,#fff,#fff6cf);color:#503d0b;box-shadow:0 7px 22px rgba(15,52,96,.13)}
+.bonus-inner{position:relative;display:flex;gap:10px;align-items:flex-start}
+.bonus-icon{font-size:1.55rem;line-height:1}
+.bonus strong{color:#0f3460}
+
+.section{padding:21px}
+.section h2{color:#0f3460;text-align:center;font-size:1.3rem;margin:0 0 7px}
+.section-intro{text-align:center;color:#5d6673;margin:0 auto 16px;font-size:.9rem}
+.cruise-photo{width:100%;height:205px;object-fit:cover;border-radius:15px;display:block;margin-bottom:17px}
+.benefits{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.benefits li{position:relative;padding:8px 9px 8px 32px;background:#f7fafc;border-radius:10px;font-size:.88rem}
+.benefits li:before{content:"✓";position:absolute;left:9px;top:7px;width:18px;height:18px;border-radius:50%;background:#0f3460;color:#fff;font-size:.68rem;font-weight:800;display:flex;align-items:center;justify-content:center}
+.benefits strong{color:#0f3460}
+.closing{margin:16px 0 0;padding:12px;text-align:center;font-weight:700;color:#0f3460;background:#eef7fb;border-radius:12px}
+
+.modal-overlay{position:fixed;inset:0;background:rgba(7,19,35,.70);z-index:1000;display:none;align-items:center;justify-content:center;padding:12px}
+.modal-overlay.open{display:flex}
+.modal{width:min(100%,550px);max-height:94vh;overflow:auto;background:#fff;border-radius:19px;padding:21px;box-shadow:0 22px 70px rgba(0,0,0,.35);animation:pop .2s ease}
+@keyframes pop{from{opacity:0;transform:translateY(10px) scale(.98)}to{opacity:1;transform:none}}
+.modal h3{margin:0 28px 12px 0;color:#0f3460;font-size:1.17rem;line-height:1.25}
+.close{position:absolute;right:9px;top:9px;border:0;background:#eef2f6;border-radius:50%;width:32px;height:32px;cursor:pointer;font-size:18px;color:#52606d;z-index:2}
+.modal-wrap{position:relative}
+.safety{background:#fff6e5;border:1px solid #f3c56b;border-left:4px solid #e89b13;padding:12px 13px;border-radius:10px;color:#59420b;font-size:.87rem;margin-bottom:13px}
+.continue-btn,.send-btn{display:block;width:100%;border:0;border-radius:12px;padding:14px;font-size:.97rem;font-weight:800;cursor:pointer}
+.continue-btn{background:#0f3460;color:#fff}
+
+/* Quick Check-In Survey */
+.survey p{font-size:.91rem;color:#333;margin:0 0 12px}
+.survey .note{font-size:.8rem;color:#66717e;background:#f5f8fa;padding:10px;border-radius:9px;margin-bottom:13px}
+.check{display:flex;gap:9px;align-items:flex-start;font-size:.86rem;color:#3e4752;margin:12px 0}
+.check input{margin-top:4px;accent-color:#0f3460}
+.survey .continue-btn:disabled{opacity:.65;cursor:not-allowed}
+
+.choice-grid{display:grid;grid-template-columns:1fr 1fr;gap:11px}
+.choice{border:2px solid #dce5ed;border-radius:14px;padding:17px 12px;background:#f9fbfd;text-align:left;cursor:pointer;transition:.18s}
+.choice:hover{transform:translateY(-2px);border-color:#0f3460}
+.choice.wide{border-color:#f0c74e;background:linear-gradient(180deg,#fffdf3,#fff)}
+.choice-icon{font-size:1.55rem;margin-bottom:7px}
+.choice strong{display:block;color:#0f3460;font-size:.92rem;line-height:1.3}
+.choice span{display:block;color:#697480;font-size:.76rem;margin-top:5px}
+.email-box{background:#f7fafc;border-radius:13px;padding:14px;margin-top:9px}
+.email-box label{display:block;font-size:.81rem;font-weight:700;color:#42505d;margin-bottom:6px}
+.email-box input{width:100%;padding:12px;border:1px solid #cbd6df;border-radius:9px;font:inherit;outline:none}
+.email-box input:focus{border-color:#0f3460;box-shadow:0 0 0 3px rgba(15,52,96,.1)}
+.send-btn{margin-top:9px;background:#0f3460;color:#fff}
+.send-btn:disabled{opacity:.65;cursor:wait}
+.email-note{font-size:.73rem;color:#737e88;margin-top:7px;line-height:1.4}
+.status{font-size:.82rem;margin-top:10px;padding:9px;border-radius:9px;display:none}
+.status.success{display:block;background:#edf8f1;color:#27613c}
+.status.error{display:block;background:#fff0f0;color:#8a2f2f}
+.back{display:block;margin:11px auto 0;border:0;background:none;color:#0f3460;font-weight:700;cursor:pointer}
+.zoom-note{margin-top:11px;padding:10px;background:#eef7fb;border-radius:10px;color:#35526a;font-size:.8rem}
+@media(max-width:520px){
+body{padding:7px 6px 24px}.hero,.hero-content{min-height:410px}.hero-content{padding:23px 17px 21px}.hero h1{font-size:1.9rem}.hero-tag{font-size:.76rem}.section,.start-card{padding:16px}.cruise-photo{height:170px}.benefits li{font-size:.84rem;padding-left:30px}.choice-grid{grid-template-columns:1fr}.modal{padding:18px 15px}
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+  <section class="card start-card">
+    <h2>Here’s Your Next Step</h2>
+    <p>Welcome, and thank you for finding time to join.</p>
+    <button class="start-btn" id="startBtnTop">CLICK HERE TO START WATCHING THE PRESENTATION</button>
+  </section>
+
+  <section class="card hero">
+    <img class="hero-bg" src="https://assets.princess.com/is/image/princesscruises/majestic-princess-ship-at-sea-exterior-livery-forward-bow?qlt=82&ts=1697267019766" alt="Large cruise ship sailing at sea">
+    <div class="hero-content">
+      <div class="kicker">CRUISE TRAVEL PRESENTATION</div>
+      <h1>Have the Time of Your Life on a Luxury Cruise</h1>
+      <p class="hero-sub"><strong>5-Day / 4-Night Cruise for 2</strong> — discover how to enjoy a cruise vacation with great travel savings.</p>
+      <div class="hero-tag">45-minute LIVE presentation • Join from a quiet, stationary place</div>
+    </div>
+  </section>
+
+  <section class="welcome card">
+    <h2>Welcome &amp; Thank You for Joining</h2>
+    <p>Your Cruise Certificate will be released via email after the session.</p>
+  </section>
+
+  <section class="bonus">
+    <div class="bonus-inner">
+      <div class="bonus-icon">🎁</div>
+      <div><strong>+$100 Rewards Voucher Bonus</strong><br>
+      Use a <strong>laptop, desktop, or tablet</strong> for the best viewing experience and receive the bonus on top of your Travel Certificate.</div>
+    </div>
+  </section>
+
+  <section class="card section">
+    <img class="cruise-photo" src="https://images.unsplash.com/photo-1569263979104-865ab7cd8d13?auto=format&fit=crop&w=1600&q=90" alt="Luxury cruise ship sailing on blue ocean">
+    <h2>5-Day / 4-Night Luxury Cruise for 2</h2>
+    <p class="section-intro">Valid for 24 months — redeem now, travel later.</p>
+    <ul class="benefits">
+      <li><strong>Sailing from:</strong> Miami, Port Canaveral or Los Angeles</li>
+      <li><strong>Fully transferable</strong> before activation</li>
+      <li><strong>24-month validity</strong></li>
+      <li>Sail to <strong>Cozumel, Nassau Bahamas or Ensenada Mexico</strong></li>
+      <li>Pay just <strong>taxes &amp; port fees</strong></li>
+      <li>One-time <strong>$49 activation fee per person</strong></li>
+      <li><strong>No timeshare or onboard sales presentation</strong></li>
+      <li><strong>Breakfast, lunch &amp; dinner buffet</strong></li>
+      <li><strong>Vegas-style entertainment</strong></li>
+      <li><strong>Access to onboard facilities</strong></li>
+    </ul>
+    <div class="closing">Redeem Now, Travel Later!</div>
+  </section>
+
+  <section class="card start-card">
+    <h2>Here’s Your Next Step</h2>
+    <p>Welcome, and thank you for finding time to join.</p>
+    <button class="start-btn" id="startBtnBottom">CLICK HERE TO START WATCHING THE PRESENTATION</button>
+  </section>
+
+</div>
+
+<div class="modal-overlay" id="modal">
+  <div class="modal-wrap">
+    <div class="modal">
+      <button class="close" id="closeBtn" aria-label="Close">×</button>
+
+      <div id="safetyStep">
+        <h3>Before You Continue</h3>
+        <div class="safety"><strong>Please join from a quiet, stationary place.</strong><br><br>For safety, we cannot accommodate participants who are driving or in a moving vehicle.</div>
+        <button class="continue-btn" id="safetyContinue">I UNDERSTAND — CONTINUE</button>
+      </div>
+
+      <!-- QUICK CHECK-IN SURVEY — INSERTED AFTER SAFETY STEP -->
+      <div id="surveyStep" style="display:none">
+        <h3>Quick Check-In Survey</h3>
+        <div class="survey">
+          <p>When you join the presentation, you'll be asked to complete a short participant survey. This simply helps us get to know our audience and understand who we're presenting to.</p>
+          <p>Some questions may include your <strong>total household income</strong> and <strong>residency/citizenship</strong>. For household income, please consider the <strong>combined income of everyone</strong> in your household, including yourself, your spouse/partner, or other contributing family members (<strong>ideally $50,000/year</strong>).</p>
+          <p>The survey does not affect your ability to join the presentation. Everyone is welcome to attend!</p>
+          <div class="survey note">Please complete the short check-in when Zoom opens so the host can check you in.</div>
+          <label class="check"><input type="checkbox" id="surveyOk"> <span>I understand the quick check-in survey and am ready to continue.</span></label>
+          <button class="continue-btn" id="surveyContinue" disabled>I UNDERSTAND — CONTINUE</button>
+        </div>
+      </div>
+
+      <div id="choiceStep" style="display:none">
+        <h3>Choose How You’re Connecting</h3>
+        <div class="choice-grid">
+          <button class="choice" id="mobileChoice">
+            <div class="choice-icon">📱</div>
+            <strong>Mobile Phone</strong>
+            <span>Go directly to the presentation.</span>
+          </button>
+          <button class="choice wide" id="wideChoice">
+            <div class="choice-icon">💻</div>
+            <strong>Laptop, Desktop or Tablet</strong>
+            <span>Have the Zoom details sent to your email.</span>
+          </button>
+        </div>
+      </div>
+
+      <div id="wideStep" style="display:none">
+        <h3>Send Me the Zoom Details</h3>
+        <div class="email-box">
+          <label for="email">Enter your email</label>
+          <input id="email" type="email" autocomplete="email" placeholder="you@example.com">
+          <div class="email-note">We’ll send the Zoom meeting details to this email.</div>
+          <button class="send-btn" id="sendZoom">SEND ZOOM DETAILS TO MY EMAIL</button>
+          <div class="status" id="status"></div>
+        </div>
+        <div class="zoom-note"><strong>Check your inbox.</strong> If you do not see it shortly, check spam or junk.</div>
+        <button class="back" id="wideBack">← Back</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+const MOBILE_LINK="https://live.travelaht.com/aht";
+const EMAIL_SCRIPT_URL="https://script.google.com/macros/s/AKfycbx1s4eC5HwoiC44qucHUoqauckf92CItkR5tgFFXbvcl2HIaos_Iy5-EwA2HsoEyzx_dw/exec";
+
+const modal=document.getElementById("modal");
+const safety=document.getElementById("safetyStep");
+const survey=document.getElementById("surveyStep");
+const choices=document.getElementById("choiceStep");
+const wide=document.getElementById("wideStep");
+const statusBox=document.getElementById("status");
+
+function openModal(){
+  safety.style.display="block";
+  survey.style.display="none";
+  choices.style.display="none";
+  wide.style.display="none";
+
+  const surveyOk=document.getElementById("surveyOk");
+  const surveyContinue=document.getElementById("surveyContinue");
+
+  surveyOk.checked=false;
+  surveyContinue.disabled=true;
+
+  statusBox.className="status";
+  statusBox.textContent="";
+  modal.classList.add("open");
+  document.body.style.overflow="hidden";
+}
+function closeModal(){modal.classList.remove("open");document.body.style.overflow="";}
+
+document.getElementById("startBtnTop").addEventListener("click",openModal);
+document.getElementById("startBtnBottom").addEventListener("click",openModal);
+document.getElementById("closeBtn").addEventListener("click",closeModal);
+modal.addEventListener("click",e=>{if(e.target===modal)closeModal()});
+document.addEventListener("keydown",e=>{if(e.key==="Escape")closeModal()});
+
+/* Safety step -> Quick Check-In Survey */
+document.getElementById("safetyContinue").addEventListener("click",()=>{
+  safety.style.display="none";
+  survey.style.display="block";
+});
+
+/* Quick Check-In Survey */
+const surveyOk=document.getElementById("surveyOk");
+const surveyContinue=document.getElementById("surveyContinue");
+
+surveyOk.addEventListener("change",()=>{
+  surveyContinue.disabled=!surveyOk.checked;
+});
+
+surveyContinue.addEventListener("click",()=>{
+  survey.style.display="none";
+  choices.style.display="block";
+});
+
+/* Same-tab navigation prevents the extra "verify this link" new-window prompt. */
+document.getElementById("mobileChoice").addEventListener("click",()=>{
+  window.location.href=MOBILE_LINK;
+});
+
+document.getElementById("wideChoice").addEventListener("click",()=>{
+  choices.style.display="none";
+  wide.style.display="block";
+});
+
+document.getElementById("wideBack").addEventListener("click",()=>{
+  wide.style.display="none";
+  choices.style.display="block";
+});
+
+document.getElementById("sendZoom").addEventListener("click",async()=>{
+  const email=document.getElementById("email");
+  const button=document.getElementById("sendZoom");
+
+  if(!email.checkValidity()){email.reportValidity();return;}
+
+  if(!EMAIL_SCRIPT_URL || EMAIL_SCRIPT_URL.includes("PASTE_YOUR_")){
+    statusBox.className="status error";
+    statusBox.textContent="Email sending is not connected yet.";
+    return;
+  }
+
+  button.disabled=true;
+  button.textContent="SENDING…";
+  statusBox.className="status";
+  statusBox.textContent="";
+
+  try{
+    const response=await fetch(EMAIL_SCRIPT_URL,{
+      method:"POST",
+      headers:{"Content-Type":"application/x-www-form-urlencoded;charset=UTF-8"},
+      body:new URLSearchParams({
+        action:"sendZoomDetails",
+        email:email.value.trim(),
+        source:"Cruise Join Now"
+      })
+    });
+
+    const result=await response.json().catch(()=>({}));
+    if(!response.ok || result.success===false) throw new Error(result.message||"Send failed");
+
+    statusBox.className="status success";
+    statusBox.textContent="Sent. Please check your inbox for the Zoom details.";
+    button.textContent="EMAIL SENT";
+  }catch(error){
+    statusBox.className="status error";
+    statusBox.textContent="We couldn’t send the email right now. Please try again.";
+    button.disabled=false;
+    button.textContent="SEND ZOOM DETAILS TO MY EMAIL";
+  }
+});
+</script>
+</body>
+</html>
