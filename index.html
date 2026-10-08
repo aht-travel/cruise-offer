@@ -8,9 +8,7 @@
 <style>
 *{box-sizing:border-box}
 
-html{
-  scroll-behavior:smooth
-}
+html{scroll-behavior:smooth}
 
 body{
   margin:0;
@@ -561,7 +559,8 @@ body{
   background:#f9fbfd;
   text-align:left;
   cursor:pointer;
-  transition:.18s
+  transition:.18s;
+  position:relative
 }
 
 .choice:hover{
@@ -570,27 +569,119 @@ body{
 }
 
 .choice.wide{
-  border-color:#f0c74e;
-  background:linear-gradient(180deg,#fffdf3,#fff)
+  border:2px solid #f2c94c;
+  background:linear-gradient(145deg,#fffdf0,#fff8d8,#fffdf3);
+  box-shadow:0 7px 22px rgba(242,201,76,.25);
+  overflow:hidden;
+  animation:widePulse 2.2s ease-in-out infinite
+}
+
+.choice.wide:before{
+  content:"";
+  position:absolute;
+  top:0;
+  left:-120%;
+  width:70%;
+  height:100%;
+  background:linear-gradient(
+    90deg,
+    transparent,
+    rgba(255,255,255,.75),
+    transparent
+  );
+  transform:skewX(-20deg);
+  animation:shineWide 3.2s ease-in-out infinite
+}
+
+@keyframes widePulse{
+  0%,100%{
+    transform:scale(1);
+    box-shadow:0 7px 22px rgba(242,201,76,.20)
+  }
+  50%{
+    transform:scale(1.025);
+    box-shadow:0 10px 30px rgba(242,201,76,.42)
+  }
+}
+
+@keyframes shineWide{
+  0%{
+    left:-120%
+  }
+  45%,100%{
+    left:140%
+  }
 }
 
 .choice-icon{
   font-size:1.55rem;
-  margin-bottom:7px
+  margin-bottom:7px;
+  position:relative;
+  z-index:2
 }
 
 .choice strong{
   display:block;
   color:#0f3460;
   font-size:.92rem;
-  line-height:1.3
+  line-height:1.3;
+  position:relative;
+  z-index:2
 }
 
 .choice span{
   display:block;
   color:#697480;
   font-size:.76rem;
-  margin-top:5px
+  margin-top:5px;
+  position:relative;
+  z-index:2
+}
+
+
+/* =========================================================
+   $100 REWARDS VOUCHER — WIDE SCREEN TILE
+   ========================================================= */
+
+.wide-reward{
+  position:relative;
+  z-index:2;
+  margin:10px 0 0;
+  padding:8px 9px;
+  border-radius:10px;
+  background:#0f3460;
+  color:#fff;
+  text-align:center;
+  font-size:.78rem;
+  line-height:1.25;
+  font-weight:800;
+  box-shadow:0 4px 14px rgba(15,52,96,.22);
+  animation:rewardBounce 1.8s ease-in-out infinite
+}
+
+.wide-reward .reward-amount{
+  display:block;
+  color:#ffe28a;
+  font-size:1.15rem;
+  font-weight:950;
+  letter-spacing:.3px;
+  text-shadow:0 1px 5px rgba(0,0,0,.18)
+}
+
+.wide-reward .reward-text{
+  display:block;
+  color:#fff;
+  font-size:.72rem;
+  margin-top:1px
+}
+
+@keyframes rewardBounce{
+  0%,100%{
+    transform:translateY(0)
+  }
+  50%{
+    transform:translateY(-3px)
+  }
 }
 
 
@@ -772,6 +863,27 @@ body{
     grid-template-columns:1fr
   }
 
+  .choice.wide{
+    animation:widePulseMobile 2.2s ease-in-out infinite
+  }
+
+  @keyframes widePulseMobile{
+    0%,100%{
+      transform:scale(1)
+    }
+    50%{
+      transform:scale(1.015)
+    }
+  }
+
+  .wide-reward{
+    font-size:.76rem
+  }
+
+  .wide-reward .reward-amount{
+    font-size:1.08rem
+  }
+
   .modal{
     padding:18px 15px
   }
@@ -885,7 +997,7 @@ body{
 
 
   <!-- =====================================================
-       QUICK CHECK-IN SURVEY — MIDDLE OF PAGE
+       QUICK CHECK-IN SURVEY — MIDDLE
        ===================================================== -->
 
   <section class="card survey-card">
@@ -1216,6 +1328,9 @@ body{
 
         <div class="choice-grid">
 
+
+          <!-- MOBILE -->
+
           <button
             class="choice"
             id="mobileChoice"
@@ -1236,6 +1351,8 @@ body{
           </button>
 
 
+          <!-- WIDE SCREEN -->
+
           <button
             class="choice wide"
             id="wideChoice"
@@ -1250,8 +1367,20 @@ body{
             </strong>
 
             <span>
-              Have the Zoom details sent to your email.
+              Best viewing experience.
             </span>
+
+            <div class="wide-reward">
+
+              <span class="reward-amount">
+                +$100 REWARDS VOUCHER
+              </span>
+
+              <span class="reward-text">
+                BONUS FOR CONNECTING THIS WAY
+              </span>
+
+            </div>
 
           </button>
 
@@ -1494,8 +1623,7 @@ surveyContinue.addEventListener("click",()=>{
 
 /* =========================================================
    MOBILE
-   Same-tab navigation prevents extra browser verification
-   / new-window behavior.
+   Same-tab navigation preserved.
    ========================================================= */
 
 document
@@ -1539,6 +1667,7 @@ document
 
 /* =========================================================
    SEND ZOOM DETAILS
+   ORIGINAL FUNCTION PRESERVED
    ========================================================= */
 
 document
