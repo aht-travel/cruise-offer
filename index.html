@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,1777 +8,521 @@
 
 <style>
 *{box-sizing:border-box}
-
 html{scroll-behavior:smooth}
-
-body{
-  margin:0;
-  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
-  background:linear-gradient(180deg,#edf7fb 0%,#f8fbfd 55%,#fff 100%);
-  color:#172033;
-  line-height:1.5;
-  padding:10px 8px 28px
-}
-
-.container{
-  width:100%;
-  max-width:650px;
-  margin:auto
-}
-
-.card{
-  background:#fff;
-  border:1px solid rgba(15,52,96,.08);
-  border-radius:20px;
-  box-shadow:0 10px 34px rgba(15,52,96,.10);
-  overflow:hidden;
-  margin-bottom:15px
-}
-
-
-/* =========================================================
-   TOP PURCHASE / TIMESHARE BANNER
-   ========================================================= */
-
-.top-banner{
-  background:linear-gradient(135deg,#0f3460,#174f87);
-  color:#fff;
-  border-radius:18px;
-  padding:20px 18px;
-  margin-bottom:15px;
-  text-align:center;
-  box-shadow:0 10px 28px rgba(15,52,96,.20);
-  border:2px solid #f2c94c
-}
-
-.top-banner .main{
-  display:block;
-  font-size:1.25rem;
-  line-height:1.2;
-  font-weight:900;
-  letter-spacing:.3px;
-  color:#ffe28a;
-  margin-bottom:8px
-}
-
-.top-banner .message{
-  display:block;
-  font-size:.94rem;
-  line-height:1.45;
-  font-weight:650
-}
-
-.top-banner .highlight{
-  color:#ffe28a;
-  font-weight:900
-}
-
-
-/* =========================================================
-   START BUTTON
-   ========================================================= */
-
-.start-card{
-  padding:18px;
-  text-align:center
-}
-
-.start-card h2{
-  font-size:1.05rem;
-  color:#0f3460;
-  margin:0 0 4px
-}
-
-.start-card p{
-  font-size:.84rem;
-  color:#66717e;
-  margin:0 0 13px
-}
-
-.start-btn{
-  display:block;
-  width:100%;
-  border:0;
-  border-radius:13px;
-  padding:16px 13px;
-  background:linear-gradient(100deg,#0f3460,#174f87,#0f3460);
-  background-size:200% 100%;
-  color:#fff;
-  font-size:1rem;
-  font-weight:800;
-  letter-spacing:.15px;
-  cursor:pointer;
-  box-shadow:0 8px 22px rgba(15,52,96,.25);
-  animation:buttonFlow 3s ease infinite
-}
-
-.start-btn:hover{
-  transform:translateY(-1px)
-}
-
-@keyframes buttonFlow{
-  0%,100%{background-position:0% 50%}
-  50%{background-position:100% 50%}
-}
-
-
-/* =========================================================
-   HERO
-   ========================================================= */
-
-.hero{
-  position:relative;
-  min-height:475px;
-  color:#fff;
-  overflow:hidden
-}
-
-.hero-bg{
-  position:absolute;
-  inset:0;
-  width:100%;
-  height:100%;
-  object-fit:cover
-}
-
-.hero:after{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:linear-gradient(
-    180deg,
-    rgba(2,24,46,.02) 5%,
-    rgba(2,24,46,.08) 38%,
-    rgba(2,24,46,.9) 100%
-  )
-}
-
-.hero-content{
-  position:relative;
-  z-index:2;
-  min-height:475px;
-  padding:30px 23px 27px;
-  display:flex;
-  flex-direction:column;
-  justify-content:flex-end
-}
-
-.kicker{
-  font-size:.68rem;
-  letter-spacing:2.2px;
-  font-weight:800;
-  color:#ffe28a;
-  margin-bottom:7px
-}
-
-.hero h1{
-  font-size:clamp(1.8rem,7vw,2.65rem);
-  line-height:1.04;
-  margin:0 0 10px;
-  text-shadow:0 2px 13px rgba(0,0,0,.4)
-}
-
-.hero-sub{
-  font-size:1rem;
-  margin:0;
-  max-width:570px
-}
-
-.hero-sub strong{
-  color:#ffe28a
-}
-
-.hero-tag{
-  margin-top:13px;
-  display:inline-block;
-  width:max-content;
-  max-width:100%;
-  padding:7px 11px;
-  border-left:3px solid #ffd166;
-  background:rgba(5,30,54,.65);
-  font-size:.82rem;
-  font-weight:650;
-  border-radius:0 9px 9px 0
-}
-
-
-/* =========================================================
-   WELCOME
-   ========================================================= */
-
-.welcome{
-  padding:17px 20px;
-  text-align:center;
-  background:linear-gradient(135deg,#fff,#eef8fc)
-}
-
-.welcome h2{
-  margin:0 0 5px;
-  color:#0f3460;
-  font-size:1.12rem
-}
-
-.welcome p{
-  margin:0;
-  color:#5d6673;
-  font-size:.88rem
-}
-
-
-/* =========================================================
-   QUICK CHECK-IN SURVEY — MIDDLE OF PAGE
-   ========================================================= */
-
-.survey-card{
-  padding:0;
-  overflow:hidden
-}
-
-.survey-card-inner{
-  padding:20px;
-  background:linear-gradient(135deg,#f8fbfd,#eef7fb)
-}
-
-.survey-badge{
-  display:inline-block;
-  background:#0f3460;
-  color:#ffe28a;
-  font-size:.68rem;
-  font-weight:900;
-  letter-spacing:1.3px;
-  padding:6px 9px;
-  border-radius:999px;
-  margin-bottom:9px
-}
-
-.survey-card h2{
-  color:#0f3460;
-  font-size:1.18rem;
-  line-height:1.25;
-  margin:0 0 10px
-}
-
-.survey-card p{
-  color:#3f4b57;
-  font-size:.86rem;
-  line-height:1.55;
-  margin:0 0 11px
-}
-
-.survey-card strong{
-  color:#0f3460
-}
-
-.survey-highlight{
-  margin-top:13px;
-  padding:11px 12px;
-  background:#fff;
-  border-left:4px solid #f2c94c;
-  border-radius:9px;
-  color:#3f4b57;
-  font-size:.84rem;
-  line-height:1.45
-}
-
-.survey-note{
-  margin-top:10px;
-  padding:10px 12px;
-  background:#e5f1f7;
-  border-radius:9px;
-  color:#526574;
-  font-size:.77rem;
-  line-height:1.45
-}
-
-
-/* =========================================================
-   BONUS
-   ========================================================= */
-
-.bonus{
-  position:relative;
-  overflow:hidden;
-  margin:13px 13px 15px;
-  padding:14px;
-  border:2px solid #f2c94c;
-  border-radius:16px;
-  background:linear-gradient(110deg,#fff6cf,#fff,#fff6cf);
-  color:#503d0b;
-  box-shadow:0 7px 22px rgba(15,52,96,.13)
-}
-
-.bonus-inner{
-  position:relative;
-  display:flex;
-  gap:10px;
-  align-items:flex-start
-}
-
-.bonus-icon{
-  font-size:1.55rem;
-  line-height:1
-}
-
-.bonus strong{
-  color:#0f3460
-}
-
-
-/* =========================================================
-   CRUISE DETAILS
-   ========================================================= */
-
-.section{
-  padding:21px
-}
-
-.section h2{
-  color:#0f3460;
-  text-align:center;
-  font-size:1.3rem;
-  margin:0 0 7px
-}
-
-.section-intro{
-  text-align:center;
-  color:#5d6673;
-  margin:0 auto 16px;
-  font-size:.9rem
-}
-
-.cruise-photo{
-  width:100%;
-  height:205px;
-  object-fit:cover;
-  border-radius:15px;
-  display:block;
-  margin-bottom:17px
-}
-
-.benefits{
-  list-style:none;
-  margin:0;
-  padding:0;
-  display:grid;
-  gap:8px
-}
-
-.benefits li{
-  position:relative;
-  padding:8px 9px 8px 32px;
-  background:#f7fafc;
-  border-radius:10px;
-  font-size:.88rem
-}
-
-.benefits li:before{
-  content:"✓";
-  position:absolute;
-  left:9px;
-  top:7px;
-  width:18px;
-  height:18px;
-  border-radius:50%;
-  background:#0f3460;
-  color:#fff;
-  font-size:.68rem;
-  font-weight:800;
-  display:flex;
-  align-items:center;
-  justify-content:center
-}
-
-.benefits strong{
-  color:#0f3460
-}
-
-.closing{
-  margin:16px 0 0;
-  padding:12px;
-  text-align:center;
-  font-weight:700;
-  color:#0f3460;
-  background:#eef7fb;
-  border-radius:12px
-}
-
-
-/* =========================================================
-   MODAL
-   ========================================================= */
-
-.modal-overlay{
-  position:fixed;
-  inset:0;
-  background:rgba(7,19,35,.70);
-  z-index:1000;
-  display:none;
-  align-items:center;
-  justify-content:center;
-  padding:12px
-}
-
-.modal-overlay.open{
-  display:flex
-}
-
-.modal{
-  width:min(100%,550px);
-  max-height:94vh;
-  overflow:auto;
-  background:#fff;
-  border-radius:19px;
-  padding:21px;
-  box-shadow:0 22px 70px rgba(0,0,0,.35);
-  animation:pop .2s ease
-}
-
-@keyframes pop{
-  from{
-    opacity:0;
-    transform:translateY(10px) scale(.98)
-  }
-  to{
-    opacity:1;
-    transform:none
-  }
-}
-
-.modal h3{
-  margin:0 28px 12px 0;
-  color:#0f3460;
-  font-size:1.17rem;
-  line-height:1.25
-}
-
-.close{
-  position:absolute;
-  right:9px;
-  top:9px;
-  border:0;
-  background:#eef2f6;
-  border-radius:50%;
-  width:32px;
-  height:32px;
-  cursor:pointer;
-  font-size:18px;
-  color:#52606d;
-  z-index:2
-}
-
-.modal-wrap{
-  position:relative
-}
-
-
-/* =========================================================
-   SAFETY
-   ========================================================= */
-
-.safety{
-  background:#fff6e5;
-  border:1px solid #f3c56b;
-  border-left:4px solid #e89b13;
-  padding:12px 13px;
-  border-radius:10px;
-  color:#59420b;
-  font-size:.87rem;
-  margin-bottom:13px
-}
-
-.continue-btn,
-.send-btn{
-  display:block;
-  width:100%;
-  border:0;
-  border-radius:12px;
-  padding:14px;
-  font-size:.97rem;
-  font-weight:800;
-  cursor:pointer
-}
-
-.continue-btn{
-  background:#0f3460;
-  color:#fff
-}
-
-
-/* =========================================================
-   POPUP QUICK CHECK-IN SURVEY
-   ========================================================= */
-
-.survey p{
-  font-size:.91rem;
-  color:#333;
-  margin:0 0 12px
-}
-
-.survey .note{
-  font-size:.8rem;
-  color:#66717e;
-  background:#f5f8fa;
-  padding:10px;
-  border-radius:9px;
-  margin-bottom:13px
-}
-
-.check{
-  display:flex;
-  gap:9px;
-  align-items:flex-start;
-  font-size:.86rem;
-  color:#3e4752;
-  margin:12px 0
-}
-
-.check input{
-  margin-top:4px;
-  accent-color:#0f3460
-}
-
-.survey .continue-btn:disabled{
-  opacity:.65;
-  cursor:not-allowed
-}
-
-
-/* =========================================================
-   CONNECTION CHOICE
-   ========================================================= */
-
-.choice-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:11px
-}
-
-.choice{
-  border:2px solid #dce5ed;
-  border-radius:14px;
-  padding:17px 12px;
-  background:#f9fbfd;
-  text-align:left;
-  cursor:pointer;
-  transition:.18s;
-  position:relative
-}
-
-.choice:hover{
-  transform:translateY(-2px);
-  border-color:#0f3460
-}
-
-.choice.wide{
-  border:2px solid #f2c94c;
-  background:linear-gradient(145deg,#fffdf0,#fff8d8,#fffdf3);
-  box-shadow:0 7px 22px rgba(242,201,76,.25);
-  overflow:hidden;
-  animation:widePulse 2.2s ease-in-out infinite
-}
-
-.choice.wide:before{
-  content:"";
-  position:absolute;
-  top:0;
-  left:-120%;
-  width:70%;
-  height:100%;
-  background:linear-gradient(
-    90deg,
-    transparent,
-    rgba(255,255,255,.75),
-    transparent
-  );
-  transform:skewX(-20deg);
-  animation:shineWide 3.2s ease-in-out infinite
-}
-
-@keyframes widePulse{
-  0%,100%{
-    transform:scale(1);
-    box-shadow:0 7px 22px rgba(242,201,76,.20)
-  }
-  50%{
-    transform:scale(1.025);
-    box-shadow:0 10px 30px rgba(242,201,76,.42)
-  }
-}
-
-@keyframes shineWide{
-  0%{
-    left:-120%
-  }
-  45%,100%{
-    left:140%
-  }
-}
-
-.choice-icon{
-  font-size:1.55rem;
-  margin-bottom:7px;
-  position:relative;
-  z-index:2
-}
-
-.choice strong{
-  display:block;
-  color:#0f3460;
-  font-size:.92rem;
-  line-height:1.3;
-  position:relative;
-  z-index:2
-}
-
-.choice span{
-  display:block;
-  color:#697480;
-  font-size:.76rem;
-  margin-top:5px;
-  position:relative;
-  z-index:2
-}
-
-
-/* =========================================================
-   $100 REWARDS VOUCHER — WIDE SCREEN TILE
-   ========================================================= */
-
-.wide-reward{
-  position:relative;
-  z-index:2;
-  margin:10px 0 0;
-  padding:8px 9px;
-  border-radius:10px;
-  background:#0f3460;
-  color:#fff;
-  text-align:center;
-  font-size:.78rem;
-  line-height:1.25;
-  font-weight:800;
-  box-shadow:0 4px 14px rgba(15,52,96,.22);
-  animation:rewardBounce 1.8s ease-in-out infinite
-}
-
-.wide-reward .reward-amount{
-  display:block;
-  color:#ffe28a;
-  font-size:1.15rem;
-  font-weight:950;
-  letter-spacing:.3px;
-  text-shadow:0 1px 5px rgba(0,0,0,.18)
-}
-
-.wide-reward .reward-text{
-  display:block;
-  color:#fff;
-  font-size:.72rem;
-  margin-top:1px
-}
-
-@keyframes rewardBounce{
-  0%,100%{
-    transform:translateY(0)
-  }
-  50%{
-    transform:translateY(-3px)
-  }
-}
-
-
-/* =========================================================
-   EMAIL
-   ========================================================= */
-
-.email-box{
-  background:#f7fafc;
-  border-radius:13px;
-  padding:14px;
-  margin-top:9px
-}
-
-.email-box label{
-  display:block;
-  font-size:.81rem;
-  font-weight:700;
-  color:#42505d;
-  margin-bottom:6px
-}
-
-.email-box input{
-  width:100%;
-  padding:12px;
-  border:1px solid #cbd6df;
-  border-radius:9px;
-  font:inherit;
-  outline:none
-}
-
-.email-box input:focus{
-  border-color:#0f3460;
-  box-shadow:0 0 0 3px rgba(15,52,96,.1)
-}
-
-.send-btn{
-  margin-top:9px;
-  background:#0f3460;
-  color:#fff
-}
-
-.send-btn:disabled{
-  opacity:.65;
-  cursor:wait
-}
-
-.email-note{
-  font-size:.73rem;
-  color:#737e88;
-  margin-top:7px;
-  line-height:1.4
-}
-
-.status{
-  font-size:.82rem;
-  margin-top:10px;
-  padding:9px;
-  border-radius:9px;
-  display:none
-}
-
-.status.success{
-  display:block;
-  background:#edf8f1;
-  color:#27613c
-}
-
-.status.error{
-  display:block;
-  background:#fff0f0;
-  color:#8a2f2f
-}
-
-.back{
-  display:block;
-  margin:11px auto 0;
-  border:0;
-  background:none;
-  color:#0f3460;
-  font-weight:700;
-  cursor:pointer
-}
-
-.zoom-note{
-  margin-top:11px;
-  padding:10px;
-  background:#eef7fb;
-  border-radius:10px;
-  color:#35526a;
-  font-size:.8rem
-}
-
-
-/* =========================================================
-   MOBILE
-   ========================================================= */
-
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;background:linear-gradient(180deg,#edf7fb 0%,#f8fbfd 55%,#fff 100%);color:#172033;line-height:1.5;padding:10px 8px 28px}
+.container{width:100%;max-width:650px;margin:auto}
+.card{background:#fff;border:1px solid rgba(15,52,96,.08);border-radius:20px;box-shadow:0 10px 34px rgba(15,52,96,.10);overflow:hidden;margin-bottom:15px}
+
+/* TOP PURCHASE / TIMESHARE BANNER */
+.top-banner{background:linear-gradient(135deg,#0f3460,#174f87);color:#fff;border-radius:18px;padding:20px 18px;margin-bottom:15px;text-align:center;box-shadow:0 10px 28px rgba(15,52,96,.20);border:2px solid #f2c94c}
+.top-banner .main{display:block;font-size:1.25rem;line-height:1.2;font-weight:900;letter-spacing:.3px;color:#ffe28a;margin-bottom:8px}
+.top-banner .message{display:block;font-size:.94rem;line-height:1.45;font-weight:650}
+.top-banner .highlight{color:#ffe28a;font-weight:900}
+
+/* START BUTTON */
+.start-card{padding:18px;text-align:center}
+.start-card h2{font-size:1.05rem;color:#0f3460;margin:0 0 4px}
+.start-card p{font-size:.84rem;color:#66717e;margin:0 0 13px}
+.start-btn{display:block;width:100%;border:0;border-radius:13px;padding:16px 13px;background:linear-gradient(100deg,#0f3460,#174f87,#0f3460);background-size:200% 100%;color:#fff;font-size:1rem;font-weight:800;letter-spacing:.15px;cursor:pointer;box-shadow:0 8px 22px rgba(15,52,96,.25);animation:buttonFlow 3s ease infinite}
+.start-btn:hover{transform:translateY(-1px)}
+@keyframes buttonFlow{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+
+/* HERO */
+.hero{position:relative;min-height:475px;color:#fff;overflow:hidden}
+.hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(2,24,46,.02) 5%,rgba(2,24,46,.08) 38%,rgba(2,24,46,.9) 100%)}
+.hero-content{position:relative;z-index:2;min-height:475px;padding:30px 23px 27px;display:flex;flex-direction:column;justify-content:flex-end}
+.kicker{font-size:.68rem;letter-spacing:2.2px;font-weight:800;color:#ffe28a;margin-bottom:7px}
+.hero h1{font-size:clamp(1.8rem,7vw,2.65rem);line-height:1.04;margin:0 0 10px;text-shadow:0 2px 13px rgba(0,0,0,.4)}
+.hero-sub{font-size:1rem;margin:0;max-width:570px}
+.hero-sub strong{color:#ffe28a}
+.hero-tag{margin-top:13px;display:inline-block;width:max-content;max-width:100%;padding:7px 11px;border-left:3px solid #ffd166;background:rgba(5,30,54,.65);font-size:.82rem;font-weight:650;border-radius:0 9px 9px 0}
+
+/* WELCOME */
+.welcome{padding:17px 20px;text-align:center;background:linear-gradient(135deg,#fff,#eef8fc)}
+.welcome h2{margin:0 0 5px;color:#0f3460;font-size:1.12rem}
+.welcome p{margin:0;color:#5d6673;font-size:.88rem}
+
+/* QUICK CHECK-IN SURVEY */
+.survey-card{padding:0;overflow:hidden}
+.survey-card-inner{padding:20px;background:linear-gradient(135deg,#f8fbfd,#eef7fb)}
+.survey-badge{display:inline-block;background:#0f3460;color:#ffe28a;font-size:.68rem;font-weight:900;letter-spacing:1.3px;padding:6px 9px;border-radius:999px;margin-bottom:9px}
+.survey-card h2{color:#0f3460;font-size:1.18rem;line-height:1.25;margin:0 0 10px}
+.survey-card p{color:#3f4b57;font-size:.86rem;line-height:1.55;margin:0 0 11px}
+.survey-card strong{color:#0f3460}
+.survey-highlight{margin-top:13px;padding:11px 12px;background:#fff;border-left:4px solid #f2c94c;border-radius:9px;color:#3f4b57;font-size:.84rem;line-height:1.45}
+.survey-note{margin-top:10px;padding:10px 12px;background:#e5f1f7;border-radius:9px;color:#526574;font-size:.77rem;line-height:1.45}
+
+/* BONUS */
+.bonus{position:relative;overflow:hidden;margin:13px 13px 15px;padding:14px;border:2px solid #f2c94c;border-radius:16px;background:linear-gradient(110deg,#fff6cf,#fff,#fff6cf);color:#503d0b;box-shadow:0 7px 22px rgba(15,52,96,.13)}
+.bonus-inner{position:relative;display:flex;gap:10px;align-items:flex-start}
+.bonus-icon{font-size:1.55rem;line-height:1}
+.bonus strong{color:#0f3460}
+
+/* CRUISE DETAILS */
+.section{padding:21px}
+.section h2{color:#0f3460;text-align:center;font-size:1.3rem;margin:0 0 7px}
+.section-intro{text-align:center;color:#5d6673;margin:0 auto 16px;font-size:.9rem}
+.cruise-photo{width:100%;height:205px;object-fit:cover;border-radius:15px;display:block;margin-bottom:17px}
+.benefits{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.benefits li{position:relative;padding:8px 9px 8px 32px;background:#f7fafc;border-radius:10px;font-size:.88rem}
+.benefits li:before{content:"✓";position:absolute;left:9px;top:7px;width:18px;height:18px;border-radius:50%;background:#0f3460;color:#fff;font-size:.68rem;font-weight:800;display:flex;align-items:center;justify-content:center}
+.benefits strong{color:#0f3460}
+.closing{margin:16px 0 0;padding:12px;text-align:center;font-weight:700;color:#0f3460;background:#eef7fb;border-radius:12px}
+
+/* MODAL */
+.modal-overlay{position:fixed;inset:0;background:rgba(7,19,35,.70);z-index:1000;display:none;align-items:center;justify-content:center;padding:12px}
+.modal-overlay.open{display:flex}
+.modal{width:min(100%,550px);max-height:94vh;overflow:auto;background:#fff;border-radius:19px;padding:21px;box-shadow:0 22px 70px rgba(0,0,0,.35);animation:pop .2s ease}
+@keyframes pop{from{opacity:0;transform:translateY(10px) scale(.98)}to{opacity:1;transform:none}}
+.modal h3{margin:0 28px 12px 0;color:#0f3460;font-size:1.17rem;line-height:1.25}
+.close{position:absolute;right:9px;top:9px;border:0;background:#eef2f6;border-radius:50%;width:32px;height:32px;cursor:pointer;font-size:18px;color:#52606d;z-index:2}
+.modal-wrap{position:relative}
+
+/* SAFETY */
+.safety{background:#fff6e5;border:1px solid #f3c56b;border-left:4px solid #e89b13;padding:12px 13px;border-radius:10px;color:#59420b;font-size:.87rem;margin-bottom:13px}
+.continue-btn,.send-btn{display:block;width:100%;border:0;border-radius:12px;padding:14px;font-size:.97rem;font-weight:800;cursor:pointer}
+.continue-btn{background:#0f3460;color:#fff}
+
+/* POPUP QUICK CHECK-IN SURVEY */
+.survey p{font-size:.91rem;color:#333;margin:0 0 12px}
+.survey .note{font-size:.8rem;color:#66717e;background:#f5f8fa;padding:10px;border-radius:9px;margin-bottom:13px}
+.check{display:flex;gap:9px;align-items:flex-start;font-size:.86rem;color:#3e4752;margin:12px 0}
+.check input{margin-top:4px;accent-color:#0f3460}
+.survey .continue-btn:disabled{opacity:.65;cursor:not-allowed}
+
+/* CONNECTION CHOICE */
+.choice-grid{display:grid;grid-template-columns:1fr 1fr;gap:11px}
+.choice{border:2px solid #dce5ed;border-radius:14px;padding:17px 12px;background:#f9fbfd;text-align:left;cursor:pointer;transition:.18s;position:relative}
+.choice:hover{transform:translateY(-2px);border-color:#0f3460}
+.choice.wide{border:2px solid #f2c94c;background:linear-gradient(145deg,#fffdf0,#fff8d8,#fffdf3);box-shadow:0 7px 22px rgba(242,201,76,.25);overflow:hidden;animation:widePulse 2.2s ease-in-out infinite}
+.choice.wide:before{content:"";position:absolute;top:0;left:-120%;width:70%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.75),transparent);transform:skewX(-20deg);animation:shineWide 3.2s ease-in-out infinite}
+@keyframes widePulse{0%,100%{transform:scale(1);box-shadow:0 7px 22px rgba(242,201,76,.20)}50%{transform:scale(1.025);box-shadow:0 10px 30px rgba(242,201,76,.42)}}
+@keyframes shineWide{0%{left:-120%}45%,100%{left:140%}}
+.choice-icon{font-size:1.55rem;margin-bottom:7px;position:relative;z-index:2}
+.choice strong{display:block;color:#0f3460;font-size:.92rem;line-height:1.3;position:relative;z-index:2}
+.choice span{display:block;color:#697480;font-size:.76rem;margin-top:5px;position:relative;z-index:2}
+
+/* $100 REWARDS VOUCHER */
+.wide-reward{position:relative;z-index:2;margin:10px 0 0;padding:8px 9px;border-radius:10px;background:#0f3460;color:#fff;text-align:center;font-size:.78rem;line-height:1.25;font-weight:800;box-shadow:0 4px 14px rgba(15,52,96,.22);animation:rewardBounce 1.8s ease-in-out infinite}
+.wide-reward .reward-amount{display:block;color:#ffe28a;font-size:1.15rem;font-weight:950;letter-spacing:.3px;text-shadow:0 1px 5px rgba(0,0,0,.18)}
+.wide-reward .reward-text{display:block;color:#fff;font-size:.72rem;margin-top:1px}
+@keyframes rewardBounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}
+
+/* EMAIL */
+.email-box{background:#f7fafc;border-radius:13px;padding:14px;margin-top:9px}
+.email-box label{display:block;font-size:.81rem;font-weight:700;color:#42505d;margin-bottom:6px}
+.email-box input{width:100%;padding:12px;border:1px solid #cbd6df;border-radius:9px;font:inherit;outline:none}
+.email-box input:focus{border-color:#0f3460;box-shadow:0 0 0 3px rgba(15,52,96,.1)}
+.send-btn{margin-top:9px;background:#0f3460;color:#fff}
+.send-btn:disabled{opacity:.65;cursor:wait}
+.email-note{font-size:.73rem;color:#737e88;margin-top:7px;line-height:1.4}
+.status{font-size:.82rem;margin-top:10px;padding:9px;border-radius:9px;display:none}
+.status.success{display:block;background:#edf8f1;color:#27613c}
+.status.error{display:block;background:#fff0f0;color:#8a2f2f}
+.back{display:block;margin:11px auto 0;border:0;background:none;color:#0f3460;font-weight:700;cursor:pointer}
+.zoom-note{margin-top:11px;padding:10px;background:#eef7fb;border-radius:10px;color:#35526a;font-size:.8rem}
+
+/* MOBILE */
 @media(max-width:520px){
-
-  body{
-    padding:7px 6px 24px
-  }
-
-  .top-banner{
-    padding:17px 14px;
-    border-radius:15px
-  }
-
-  .top-banner .main{
-    font-size:1.12rem
-  }
-
-  .top-banner .message{
-    font-size:.86rem
-  }
-
-  .hero,
-  .hero-content{
-    min-height:410px
-  }
-
-  .hero-content{
-    padding:23px 17px 21px
-  }
-
-  .hero h1{
-    font-size:1.9rem
-  }
-
-  .hero-tag{
-    font-size:.76rem
-  }
-
-  .section,
-  .start-card{
-    padding:16px
-  }
-
-  .cruise-photo{
-    height:170px
-  }
-
-  .benefits li{
-    font-size:.84rem;
-    padding-left:30px
-  }
-
-  .survey-card-inner{
-    padding:16px 15px
-  }
-
-  .survey-badge{
-    font-size:.62rem;
-    letter-spacing:1px;
-    padding:5px 8px
-  }
-
-  .survey-card h2{
-    font-size:1.08rem
-  }
-
-  .survey-card p{
-    font-size:.83rem;
-    line-height:1.5
-  }
-
-  .survey-highlight{
-    font-size:.81rem;
-    padding:10px
-  }
-
-  .survey-note{
-    font-size:.74rem;
-    padding:9px 10px
-  }
-
-  .choice-grid{
-    grid-template-columns:1fr
-  }
-
-  .choice.wide{
-    animation:widePulseMobile 2.2s ease-in-out infinite
-  }
-
-  @keyframes widePulseMobile{
-    0%,100%{
-      transform:scale(1)
-    }
-    50%{
-      transform:scale(1.015)
-    }
-  }
-
-  .wide-reward{
-    font-size:.76rem
-  }
-
-  .wide-reward .reward-amount{
-    font-size:1.08rem
-  }
-
-  .modal{
-    padding:18px 15px
-  }
+  body{padding:7px 6px 24px}
+  .top-banner{padding:17px 14px;border-radius:15px}
+  .top-banner .main{font-size:1.12rem}
+  .top-banner .message{font-size:.86rem}
+  .hero,.hero-content{min-height:410px}
+  .hero-content{padding:23px 17px 21px}
+  .hero h1{font-size:1.9rem}
+  .hero-tag{font-size:.76rem}
+  .section,.start-card{padding:16px}
+  .cruise-photo{height:170px}
+  .benefits li{font-size:.84rem;padding-left:30px}
+  .survey-card-inner{padding:16px 15px}
+  .survey-badge{font-size:.62rem;letter-spacing:1px;padding:5px 8px}
+  .survey-card h2{font-size:1.08rem}
+  .survey-card p{font-size:.83rem;line-height:1.5}
+  .survey-highlight{font-size:.81rem;padding:10px}
+  .survey-note{font-size:.74rem;padding:9px 10px}
+  .choice-grid{grid-template-columns:1fr}
+  .choice.wide{animation:widePulseMobile 2.2s ease-in-out infinite}
+  @keyframes widePulseMobile{0%,100%{transform:scale(1)}50%{transform:scale(1.015)}}
+  .wide-reward{font-size:.76rem}
+  .wide-reward .reward-amount{font-size:1.08rem}
+  .modal{padding:18px 15px}
 }
 </style>
 </head>
 
-
 <body>
-
 <div class="container">
 
-
-  <!-- =====================================================
-       TOP PURCHASE / TIMESHARE NOTICE
-       ===================================================== -->
-
+  <!-- TOP PURCHASE / TIMESHARE NOTICE -->
   <div class="top-banner">
-
-    <span class="main">
-      NO PURCHASE IS REQUIRED
-    </span>
-
+    <span class="main">NO PURCHASE IS REQUIRED</span>
     <span class="message">
       You do not need to pay anything in order to receive your Cruise Voucher.
       As long as you
       <span class="highlight">finish until the end of the presentation</span>,
       it is
       <span class="highlight">guaranteed to be emailed to you.</span>
-
       <br>
-
-      <span class="highlight">
-        NOT A TIMESHARE.
-      </span>
+      <span class="highlight">NOT A TIMESHARE.</span>
     </span>
-
   </div>
 
-
-  <!-- =====================================================
-       START
-       ===================================================== -->
-
+  <!-- START -->
   <section class="card start-card">
-
     <h2>Here’s Your Next Step</h2>
-
-    <p>
-      Welcome, and thank you for finding time to join.
-    </p>
-
+    <p>Welcome, and thank you for finding time to join.</p>
     <button class="start-btn" id="startBtnTop">
       CLICK HERE TO START WATCHING THE PRESENTATION
     </button>
-
   </section>
 
-
-  <!-- =====================================================
-       HERO
-       ===================================================== -->
-
+  <!-- HERO -->
   <section class="card hero">
-
     <img
       class="hero-bg"
       src="https://assets.princess.com/is/image/princesscruises/majestic-princess-ship-at-sea-exterior-livery-forward-bow?qlt=82&ts=1697267019766"
       alt="Large cruise ship sailing at sea"
     >
-
     <div class="hero-content">
-
-      <div class="kicker">
-        CRUISE TRAVEL PRESENTATION
-      </div>
-
-      <h1>
-        Have the Time of Your Life on a Luxury Cruise
-      </h1>
-
+      <div class="kicker">CRUISE TRAVEL PRESENTATION</div>
+      <h1>Have the Time of Your Life on a Luxury Cruise</h1>
       <p class="hero-sub">
         <strong>5-Day / 4-Night Cruise for 2</strong>
         — discover how to enjoy a cruise vacation with great travel savings.
       </p>
-
       <div class="hero-tag">
         45-minute LIVE presentation • Join from a quiet, stationary place
       </div>
-
     </div>
-
   </section>
 
-
-  <!-- =====================================================
-       WELCOME
-       ===================================================== -->
-
+  <!-- WELCOME -->
   <section class="welcome card">
-
-    <h2>
-      Welcome &amp; Thank You for Joining
-    </h2>
-
-    <p>
-      Your Cruise Certificate will be released via email after the session.
-    </p>
-
+    <h2>Welcome &amp; Thank You for Joining</h2>
+    <p>Your Cruise Certificate will be released via email after the session.</p>
   </section>
 
-
-  <!-- =====================================================
-       QUICK CHECK-IN SURVEY — MIDDLE
-       ===================================================== -->
-
+  <!-- QUICK CHECK-IN SURVEY — MIDDLE -->
   <section class="card survey-card">
-
     <div class="survey-card-inner">
-
-      <div class="survey-badge">
-        QUICK CHECK-IN SURVEY
-      </div>
-
-      <h2>
-        One Quick Step When You Join
-      </h2>
-
+      <div class="survey-badge">QUICK CHECK-IN SURVEY</div>
+      <h2>One Quick Step When You Join</h2>
       <p>
         When you join the presentation, you'll be asked to complete a short
         participant survey. This simply helps us get to know our audience and
         understand who we're presenting to.
       </p>
-
       <p>
-        Some questions may include your
-        <strong>total household income</strong>
-        and <strong>residency/citizenship</strong>.
-        For household income, please consider the
-        <strong>combined income of everyone</strong>
+        Some questions may include your <strong>total household income</strong>
+        and <strong>residency/citizenship</strong>. For household income,
+        please consider the <strong>combined income of everyone</strong>
         in your household, including yourself, your spouse/partner, or other
-        contributing family members
-        (<strong>ideally $50,000/year</strong>).
+        contributing family members (<strong>ideally $50,000/year</strong>).
       </p>
-
       <div class="survey-highlight">
-
-        <strong>
-          The survey does not affect your ability to join the presentation.
-        </strong>
-
+        <strong>The survey does not affect your ability to join the presentation.</strong>
         Everyone is welcome to attend!
-
       </div>
-
       <div class="survey-note">
-
         Please complete the short check-in when Zoom opens so the host can
         check you in.
-
       </div>
-
     </div>
-
   </section>
 
-
-  <!-- =====================================================
-       BONUS
-       ===================================================== -->
-
+  <!-- BONUS -->
   <section class="bonus">
-
     <div class="bonus-inner">
-
-      <div class="bonus-icon">
-        🎁
-      </div>
-
+      <div class="bonus-icon">🎁</div>
       <div>
-
-        <strong>
-          +$100 Rewards Voucher Bonus
-        </strong>
-
+        <strong>+$100 Rewards Voucher Bonus</strong>
         <br>
-
-        Use a
-        <strong>laptop, desktop, or tablet</strong>
-        for the best viewing experience and receive the bonus on top of your
-        Travel Certificate.
-
+        Use a <strong>laptop, desktop, or tablet</strong> for the best viewing
+        experience and receive the bonus on top of your Travel Certificate.
       </div>
-
     </div>
-
   </section>
 
-
-  <!-- =====================================================
-       CRUISE DETAILS
-       ===================================================== -->
-
+  <!-- CRUISE DETAILS -->
   <section class="card section">
-
     <img
       class="cruise-photo"
       src="https://images.unsplash.com/photo-1569263979104-865ab7cd8d13?auto=format&fit=crop&w=1600&q=90"
       alt="Luxury cruise ship sailing on blue ocean"
     >
-
-    <h2>
-      5-Day / 4-Night Luxury Cruise for 2
-    </h2>
-
-    <p class="section-intro">
-      Valid for 24 months — redeem now, travel later.
-    </p>
-
+    <h2>5-Day / 4-Night Luxury Cruise for 2</h2>
+    <p class="section-intro">Valid for 24 months — redeem now, travel later.</p>
     <ul class="benefits">
-
-      <li>
-        <strong>Sailing from:</strong>
-        Miami, Port Canaveral or Los Angeles
-      </li>
-
-      <li>
-        <strong>Fully transferable</strong>
-        before activation
-      </li>
-
-      <li>
-        <strong>24-month validity</strong>
-      </li>
-
-      <li>
-        Sail to
-        <strong>Cozumel, Nassau Bahamas or Ensenada Mexico</strong>
-      </li>
-
-      <li>
-        Pay just
-        <strong>taxes &amp; port fees</strong>
-      </li>
-
-      <li>
-        One-time
-        <strong>$49 activation fee per person</strong>
-      </li>
-
-      <li>
-        <strong>
-          No timeshare or onboard sales presentation
-        </strong>
-      </li>
-
-      <li>
-        <strong>
-          Breakfast, lunch &amp; dinner buffet
-        </strong>
-      </li>
-
-      <li>
-        <strong>
-          Vegas-style entertainment
-        </strong>
-      </li>
-
-      <li>
-        <strong>
-          Access to onboard facilities
-        </strong>
-      </li>
-
+      <li><strong>Sailing from:</strong> Miami, Port Canaveral or Los Angeles</li>
+      <li><strong>Fully transferable</strong> before activation</li>
+      <li><strong>24-month validity</strong></li>
+      <li>Sail to <strong>Cozumel, Nassau Bahamas or Ensenada Mexico</strong></li>
+      <li>Pay just <strong>taxes &amp; port fees</strong></li>
+      <li>One-time <strong>$49 activation fee per person</strong></li>
+      <li><strong>No timeshare or onboard sales presentation</strong></li>
+      <li><strong>Breakfast, lunch &amp; dinner buffet</strong></li>
+      <li><strong>Vegas-style entertainment</strong></li>
+      <li><strong>Access to onboard facilities</strong></li>
     </ul>
-
-    <div class="closing">
-      Redeem Now, Travel Later!
-    </div>
-
+    <div class="closing">Redeem Now, Travel Later!</div>
   </section>
 
-
-  <!-- =====================================================
-       BOTTOM START BUTTON
-       ===================================================== -->
-
+  <!-- BOTTOM START BUTTON -->
   <section class="card start-card">
-
-    <h2>
-      Here’s Your Next Step
-    </h2>
-
-    <p>
-      Welcome, and thank you for finding time to join.
-    </p>
-
+    <h2>Here’s Your Next Step</h2>
+    <p>Welcome, and thank you for finding time to join.</p>
     <button class="start-btn" id="startBtnBottom">
       CLICK HERE TO START WATCHING THE PRESENTATION
     </button>
-
   </section>
-
 
 </div>
 
-
-<!-- =========================================================
-     CONNECTION MODAL
-     ========================================================= -->
-
+<!-- CONNECTION MODAL -->
 <div class="modal-overlay" id="modal">
-
   <div class="modal-wrap">
-
     <div class="modal">
+      <button class="close" id="closeBtn" aria-label="Close">×</button>
 
-      <button
-        class="close"
-        id="closeBtn"
-        aria-label="Close"
-      >
-        ×
-      </button>
-
-
-      <!-- ===================================================
-           SAFETY STEP
-           =================================================== -->
-
+      <!-- SAFETY STEP -->
       <div id="safetyStep">
-
-        <h3>
-          Before You Continue
-        </h3>
-
+        <h3>Before You Continue</h3>
         <div class="safety">
-
-          <strong>
-            Please join from a quiet, stationary place.
-          </strong>
-
+          <strong>Please join from a quiet, stationary place.</strong>
           <br><br>
-
           For safety, we cannot accommodate participants who are driving
           or in a moving vehicle.
-
         </div>
-
-        <button
-          class="continue-btn"
-          id="safetyContinue"
-        >
+        <button class="continue-btn" id="safetyContinue">
           I UNDERSTAND — CONTINUE
         </button>
-
       </div>
 
-
-      <!-- ===================================================
-           QUICK CHECK-IN SURVEY — POPUP
-           =================================================== -->
-
-      <div
-        id="surveyStep"
-        style="display:none"
-      >
-
-        <h3>
-          Quick Check-In Survey
-        </h3>
-
+      <!-- POPUP QUICK CHECK-IN SURVEY -->
+      <div id="surveyStep" style="display:none">
+        <h3>Quick Check-In Survey</h3>
         <div class="survey">
-
           <p>
             When you join the presentation, you'll be asked to complete a
             short participant survey. This simply helps us get to know our
             audience and understand who we're presenting to.
           </p>
-
           <p>
-            Some questions may include your
-            <strong>total household income</strong>
-            and <strong>residency/citizenship</strong>.
-            For household income, please consider the
-            <strong>combined income of everyone</strong>
+            Some questions may include your <strong>total household income</strong>
+            and <strong>residency/citizenship</strong>. For household income,
+            please consider the <strong>combined income of everyone</strong>
             in your household, including yourself, your spouse/partner,
-            or other contributing family members
-            (<strong>ideally $50,000/year</strong>).
+            or other contributing family members (<strong>ideally $50,000/year</strong>).
           </p>
-
           <p>
             The survey does not affect your ability to join the presentation.
             Everyone is welcome to attend!
           </p>
-
           <div class="survey note">
-
             Please complete the short check-in when Zoom opens so the host
             can check you in.
-
           </div>
-
           <label class="check">
-
-            <input
-              type="checkbox"
-              id="surveyOk"
-            >
-
-            <span>
-              I understand the quick check-in survey and am ready to continue.
-            </span>
-
+            <input type="checkbox" id="surveyOk">
+            <span>I understand the quick check-in survey and am ready to continue.</span>
           </label>
-
-          <button
-            class="continue-btn"
-            id="surveyContinue"
-            disabled
-          >
+          <button class="continue-btn" id="surveyContinue" disabled>
             I UNDERSTAND — CONTINUE
           </button>
-
         </div>
-
       </div>
 
-
-      <!-- ===================================================
-           CONNECTION CHOICE
-           =================================================== -->
-
-      <div
-        id="choiceStep"
-        style="display:none"
-      >
-
-        <h3>
-          Choose How You’re Connecting
-        </h3>
-
+      <!-- CONNECTION CHOICE -->
+      <div id="choiceStep" style="display:none">
+        <h3>Choose How You’re Connecting</h3>
         <div class="choice-grid">
-
-
-          <!-- MOBILE -->
-
-          <button
-            class="choice"
-            id="mobileChoice"
-          >
-
-            <div class="choice-icon">
-              📱
-            </div>
-
-            <strong>
-              Mobile Phone
-            </strong>
-
-            <span>
-              Go directly to the presentation.
-            </span>
-
+          <button class="choice" id="mobileChoice">
+            <div class="choice-icon">📱</div>
+            <strong>Mobile Phone</strong>
+            <span>Go directly to the presentation.</span>
           </button>
 
-
-          <!-- WIDE SCREEN -->
-
-          <button
-            class="choice wide"
-            id="wideChoice"
-          >
-
-            <div class="choice-icon">
-              💻
-            </div>
-
-            <strong>
-              Laptop, Desktop or Tablet
-            </strong>
-
-            <span>
-              Best viewing experience.
-            </span>
-
+          <button class="choice wide" id="wideChoice">
+            <div class="choice-icon">💻</div>
+            <strong>Laptop, Desktop or Tablet</strong>
+            <span>Best viewing experience.</span>
             <div class="wide-reward">
-
-              <span class="reward-amount">
-                +$100 REWARDS VOUCHER
-              </span>
-
-              <span class="reward-text">
-                BONUS FOR CONNECTING THIS WAY
-              </span>
-
+              <span class="reward-amount">+$100 REWARDS VOUCHER</span>
+              <span class="reward-text">BONUS FOR CONNECTING THIS WAY</span>
             </div>
-
           </button>
-
         </div>
-
       </div>
 
-
-      <!-- ===================================================
-           EMAIL STEP
-           =================================================== -->
-
-      <div
-        id="wideStep"
-        style="display:none"
-      >
-
-        <h3>
-          Send Me the Zoom Details
-        </h3>
-
+      <!-- EMAIL STEP -->
+      <div id="wideStep" style="display:none">
+        <h3>Send Me the Zoom Details</h3>
         <div class="email-box">
-
-          <label for="email">
-            Enter your email
-          </label>
-
-          <input
-            id="email"
-            type="email"
-            autocomplete="email"
-            placeholder="you@example.com"
-          >
-
-          <div class="email-note">
-            We’ll send the Zoom meeting details to this email.
-          </div>
-
-          <button
-            class="send-btn"
-            id="sendZoom"
-          >
-            SEND ZOOM DETAILS TO MY EMAIL
-          </button>
-
-          <div
-            class="status"
-            id="status"
-          ></div>
-
+          <label for="email">Enter your email</label>
+          <input id="email" type="email" autocomplete="email" placeholder="you@example.com">
+          <div class="email-note">We’ll send the Zoom meeting details to this email.</div>
+          <button class="send-btn" id="sendZoom">SEND ZOOM DETAILS TO MY EMAIL</button>
+          <div class="status" id="status"></div>
         </div>
-
         <div class="zoom-note">
-
-          <strong>
-            Check your inbox.
-          </strong>
-
+          <strong>Check your inbox.</strong>
           If you do not see it shortly, check spam or junk.
-
         </div>
-
-        <button
-          class="back"
-          id="wideBack"
-        >
-          ← Back
-        </button>
-
+        <button class="back" id="wideBack">← Back</button>
       </div>
 
     </div>
-
   </div>
-
 </div>
 
-
 <script>
+/* LINKS / EMAIL SCRIPT */
+const MOBILE_LINK = "https://live.travelaht.com/aht";
 
-/* =========================================================
-   LINKS / EMAIL SCRIPT
-   ========================================================= */
+const EMAIL_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbx1s4eC5HwoiC44qucHUoqauckf92CItkR5tgFFXbvcl2HIaos_Iy5-EwA2HsoEyzx_dw/exec";
 
-const MOBILE_LINK="https://live.travelaht.com/aht";
+/* ELEMENTS */
+const modal = document.getElementById("modal");
+const safety = document.getElementById("safetyStep");
+const survey = document.getElementById("surveyStep");
+const choices = document.getElementById("choiceStep");
+const wide = document.getElementById("wideStep");
+const statusBox = document.getElementById("status");
 
-const EMAIL_SCRIPT_URL="https://script.google.com/macros/s/AKfycbx1s4eC5HwoiC44qucHUoqauckf92CItkR5tgFFXbvcl2HIaos_Iy5-EwA2HsoEyzx_dw/exec";
+/* OPEN MODAL */
+function openModal() {
+  safety.style.display = "block";
+  survey.style.display = "none";
+  choices.style.display = "none";
+  wide.style.display = "none";
 
+  const surveyOk = document.getElementById("surveyOk");
+  const surveyContinue = document.getElementById("surveyContinue");
 
-/* =========================================================
-   ELEMENTS
-   ========================================================= */
+  surveyOk.checked = false;
+  surveyContinue.disabled = true;
 
-const modal=document.getElementById("modal");
-
-const safety=document.getElementById("safetyStep");
-
-const survey=document.getElementById("surveyStep");
-
-const choices=document.getElementById("choiceStep");
-
-const wide=document.getElementById("wideStep");
-
-const statusBox=document.getElementById("status");
-
-
-/* =========================================================
-   OPEN MODAL
-   ========================================================= */
-
-function openModal(){
-
-  safety.style.display="block";
-
-  survey.style.display="none";
-
-  choices.style.display="none";
-
-  wide.style.display="none";
-
-
-  const surveyOk=document.getElementById("surveyOk");
-
-  const surveyContinue=document.getElementById("surveyContinue");
-
-
-  surveyOk.checked=false;
-
-  surveyContinue.disabled=true;
-
-
-  statusBox.className="status";
-
-  statusBox.textContent="";
-
+  statusBox.className = "status";
+  statusBox.textContent = "";
 
   modal.classList.add("open");
-
-  document.body.style.overflow="hidden";
-
+  document.body.style.overflow = "hidden";
 }
 
-
-/* =========================================================
-   CLOSE MODAL
-   ========================================================= */
-
-function closeModal(){
-
+/* CLOSE MODAL */
+function closeModal() {
   modal.classList.remove("open");
-
-  document.body.style.overflow="";
-
+  document.body.style.overflow = "";
 }
 
+/* START BUTTONS */
+document.getElementById("startBtnTop").addEventListener("click", openModal);
+document.getElementById("startBtnBottom").addEventListener("click", openModal);
 
-/* =========================================================
-   START BUTTONS
-   ========================================================= */
+/* CLOSE */
+document.getElementById("closeBtn").addEventListener("click", closeModal);
 
-document
-  .getElementById("startBtnTop")
-  .addEventListener("click",openModal);
+modal.addEventListener("click", e => {
+  if (e.target === modal) closeModal();
+});
 
-document
-  .getElementById("startBtnBottom")
-  .addEventListener("click",openModal);
+document.addEventListener("keydown", e => {
+  if (e.key === "Escape") closeModal();
+});
 
+/* SAFETY → SURVEY */
+document.getElementById("safetyContinue").addEventListener("click", () => {
+  safety.style.display = "none";
+  survey.style.display = "block";
+});
 
-/* =========================================================
-   CLOSE
-   ========================================================= */
+/* SURVEY CHECKBOX */
+const surveyOk = document.getElementById("surveyOk");
+const surveyContinue = document.getElementById("surveyContinue");
 
-document
-  .getElementById("closeBtn")
-  .addEventListener("click",closeModal);
+surveyOk.addEventListener("change", () => {
+  surveyContinue.disabled = !surveyOk.checked;
+});
 
+/* SURVEY → CONNECTION CHOICE */
+surveyContinue.addEventListener("click", () => {
+  survey.style.display = "none";
+  choices.style.display = "block";
+});
 
-modal.addEventListener("click",e=>{
+/* MOBILE — SAME-TAB NAVIGATION PRESERVED */
+document.getElementById("mobileChoice").addEventListener("click", () => {
+  window.location.href = MOBILE_LINK;
+});
 
-  if(e.target===modal){
-    closeModal();
+/* LAPTOP / DESKTOP / TABLET */
+document.getElementById("wideChoice").addEventListener("click", () => {
+  choices.style.display = "none";
+  wide.style.display = "block";
+});
+
+/* BACK */
+document.getElementById("wideBack").addEventListener("click", () => {
+  wide.style.display = "none";
+  choices.style.display = "block";
+});
+
+/*
+ * CORS WORKAROUND
+ * The browser cannot read the Apps Script response in no-cors mode.
+ * "Request submitted" does not guarantee that an email was sent.
+ */
+document.getElementById("sendZoom").addEventListener("click", async () => {
+  const email = document.getElementById("email");
+  const button = document.getElementById("sendZoom");
+
+  if (!email.checkValidity()) {
+    email.reportValidity();
+    return;
   }
 
-});
-
-
-document.addEventListener("keydown",e=>{
-
-  if(e.key==="Escape"){
-    closeModal();
+  if (!EMAIL_SCRIPT_URL || EMAIL_SCRIPT_URL.includes("PASTE_YOUR_")) {
+    statusBox.className = "status error";
+    statusBox.textContent = "Email sending is not connected yet.";
+    return;
   }
 
+  button.disabled = true;
+  button.textContent = "SENDING…";
+  statusBox.className = "status";
+  statusBox.textContent = "";
+
+  try {
+    await fetch(EMAIL_SCRIPT_URL, {
+      method: "POST",
+      mode: "no-cors",
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8"
+      },
+      body: new URLSearchParams({
+        action: "sendZoomDetails",
+        email: email.value.trim(),
+        source: "Cruise Join Now"
+      }).toString()
+    });
+
+    statusBox.className = "status success";
+    statusBox.textContent =
+      "Request submitted. Please check your inbox for the Zoom details. If they don't arrive shortly, check spam or junk.";
+
+    button.textContent = "REQUEST SUBMITTED";
+
+  } catch (error) {
+    statusBox.className = "status error";
+    statusBox.textContent =
+      "We couldn’t submit your request. Please try again.";
+
+    button.disabled = false;
+    button.textContent = "SEND ZOOM DETAILS TO MY EMAIL";
+  }
 });
-
-
-/* =========================================================
-   SAFETY → SURVEY
-   ========================================================= */
-
-document
-  .getElementById("safetyContinue")
-  .addEventListener("click",()=>{
-
-    safety.style.display="none";
-
-    survey.style.display="block";
-
-  });
-
-
-/* =========================================================
-   SURVEY CHECKBOX
-   ========================================================= */
-
-const surveyOk=document.getElementById("surveyOk");
-
-const surveyContinue=document.getElementById("surveyContinue");
-
-
-surveyOk.addEventListener("change",()=>{
-
-  surveyContinue.disabled=!surveyOk.checked;
-
-});
-
-
-/* =========================================================
-   SURVEY → CONNECTION CHOICE
-   ========================================================= */
-
-surveyContinue.addEventListener("click",()=>{
-
-  survey.style.display="none";
-
-  choices.style.display="block";
-
-});
-
-
-/* =========================================================
-   MOBILE
-   Same-tab navigation preserved.
-   ========================================================= */
-
-document
-  .getElementById("mobileChoice")
-  .addEventListener("click",()=>{
-
-    window.location.href=MOBILE_LINK;
-
-  });
-
-
-/* =========================================================
-   LAPTOP / DESKTOP / TABLET
-   ========================================================= */
-
-document
-  .getElementById("wideChoice")
-  .addEventListener("click",()=>{
-
-    choices.style.display="none";
-
-    wide.style.display="block";
-
-  });
-
-
-/* =========================================================
-   BACK
-   ========================================================= */
-
-document
-  .getElementById("wideBack")
-  .addEventListener("click",()=>{
-
-    wide.style.display="none";
-
-    choices.style.display="block";
-
-  });
-
-
-/* =========================================================
-   SEND ZOOM DETAILS
-   ORIGINAL FUNCTION PRESERVED
-   ========================================================= */
-
-document
-  .getElementById("sendZoom")
-  .addEventListener("click",async()=>{
-
-    const email=document.getElementById("email");
-
-    const button=document.getElementById("sendZoom");
-
-
-    if(!email.checkValidity()){
-
-      email.reportValidity();
-
-      return;
-
-    }
-
-
-    if(
-      !EMAIL_SCRIPT_URL ||
-      EMAIL_SCRIPT_URL.includes("PASTE_YOUR_")
-    ){
-
-      statusBox.className="status error";
-
-      statusBox.textContent=
-        "Email sending is not connected yet.";
-
-      return;
-
-    }
-
-
-    button.disabled=true;
-
-    button.textContent="SENDING…";
-
-    statusBox.className="status";
-
-    statusBox.textContent="";
-
-
-    try{
-
-      const response=await fetch(
-        EMAIL_SCRIPT_URL,
-        {
-          method:"POST",
-
-          headers:{
-            "Content-Type":
-              "application/x-www-form-urlencoded;charset=UTF-8"
-          },
-
-          body:new URLSearchParams({
-
-            action:"sendZoomDetails",
-
-            email:email.value.trim(),
-
-            source:"Cruise Join Now"
-
-          })
-
-        }
-      );
-
-
-      const result=
-        await response.json().catch(()=>({}));
-
-
-      if(
-        !response.ok ||
-        result.success===false
-      ){
-
-        throw new Error(
-          result.message || "Send failed"
-        );
-
-      }
-
-
-      statusBox.className="status success";
-
-      statusBox.textContent=
-        "Sent. Please check your inbox for the Zoom details.";
-
-      button.textContent="EMAIL SENT";
-
-
-    }catch(error){
-
-      statusBox.className="status error";
-
-      statusBox.textContent=
-        "We couldn’t send the email right now. Please try again.";
-
-      button.disabled=false;
-
-      button.textContent=
-        "SEND ZOOM DETAILS TO MY EMAIL";
-
-    }
-
-  });
-
 </script>
 
 </body>
